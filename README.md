@@ -1,5 +1,10 @@
 # wcom-diffusion
 
+To use the YAML file to recreate the environment on another machine, you can run:
+```
+conda env create -f environment.yml
+```
+
 ### Vaihingen
 Training script example:
 Multiple GPUs (2):
