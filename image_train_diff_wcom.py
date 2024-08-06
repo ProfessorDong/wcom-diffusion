@@ -22,7 +22,7 @@ from improved_diffusion.script_util import (
 )
 from improved_diffusion.train_util import TrainLoop
 from improved_diffusion.utils import set_random_seed, set_random_seed_for_iterations
-from datasets.vaih import VaihDataset
+from datasets.wcom import wcomDataset
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -42,7 +42,7 @@ def main():
     args.use_scale_shift_norm = False
     args.deeper_net = True  
 
-    exp_name = f"vaih_256_{args.rrdb_blocks}_{args.lr}_{args.batch_size}_{args.diffusion_steps}_{str(args.dropout)}_{MPI.COMM_WORLD.Get_rank()}"
+    exp_name = f"wcom_256_{args.rrdb_blocks}_{args.lr}_{args.batch_size}_{args.diffusion_steps}_{str(args.dropout)}_{MPI.COMM_WORLD.Get_rank()}"
 
     logs_root = Path(__file__).absolute().parent.parent / "logs"
     log_path = logs_root / f"{datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S-%f')}_{exp_name}"
